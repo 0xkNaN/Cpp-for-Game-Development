@@ -2,7 +2,7 @@
  * @Author: Hassen Rmili
  * @Date:   2023-10-15 02:55:03
  * @Last Modified by:   Hassen Rmili
- * @Last Modified time: 2023-10-16 00:02:16
+ * @Last Modified time: 2024-02-11 19:35:14
  */
 
 #include <iostream>
@@ -10,10 +10,16 @@
 
 int main()
 {
-  std::string name;
-  std::cout << "Whaat is your name : ";
+  std::string name{};
+  std::cout << "What is your name?" << std::endl;
   std::cin >> name;
-  std::cout << "Your name is " << name << std::endl;
+
+  char *age; //! Verify this later
+  std::cout << "What is your number?" << std::endl;
+  std::cin >> age;
+
+  std::cout << "You said your name is " << name << std::endl;
+  std::cout << "and your number is " << age << std::endl;
 
   return 0;
 }

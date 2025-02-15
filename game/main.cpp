@@ -1,10 +1,3 @@
-/**
- * @Author: Hassen Rmili
- * @Date:   2023-10-17 21:47:40
- * @Last Modified by:   Hassen Rmili
- * @Last Modified time: 2023-10-20 22:57:44
- */
-
 #include <iostream>
 #include <string.h>
 

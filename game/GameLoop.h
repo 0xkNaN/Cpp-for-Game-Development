@@ -1,28 +1,13 @@
 #pragma once
 
-#include <iostream>
-#include <string>
-
 #include "Player.h"
-
-enum class PlayerOption
-{
-  Quit,
-  None
-};
+#include "PlayerOptions.h"
 
 namespace GameLoop
 {
-  // double ticks = 0;
+  void welcomePlayer(Player &player);
 
-  bool welcomePlayer(Player &player);
+  PlayerOptions handlePlayerOptions();
 
-  void givePlayerOptions();
-
-  void getPlayerInput(std::string &playerInput);
-
-  PlayerOption evaluatePlayerInput(std::string &playerInput);
-
-  bool doLoop();
-
+  bool runGame();
 }

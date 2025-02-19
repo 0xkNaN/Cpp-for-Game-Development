@@ -1,50 +1,45 @@
-/**
- * @Author: Hassen Rmili
- * @Date:   2023-10-18 11:00:15
- * @Last Modified by:   Hassen Rmili
- * @Last Modified time: 2023-10-18 12:41:47
- */
-
 #include <iostream>
 
-struct SumParams
+struct Params
 {
   int x;
   int y;
   int sum;
 };
 
-void sumByPointer(int x, int y, int *out)
+void sumByPointer(int x, int y, int *sum)
 {
-  *out = x + y;
+  *sum = x + y;
 }
 
-void sumByReference(int x, int y, int &out)
+void sumByReference(int x, int y, int &sum)
 {
-  out = x + y;
+  sum = x + y;
 }
 
-void sumByStruct(SumParams &params)
+void sumByStructAsReference(Params &params)
 {
-
   params.sum = params.x + params.y;
 }
 
-int main()
+int main(int argc, char *argv[])
 {
-  int sum = 0;
-  SumParams params = {5, 5, 0};
+  //? Passing by Pointer
+  int sumByPointerValue = 0;
+  sumByPointer(10, 5, &sumByPointerValue);
+  std::cout << sumByPointerValue << std::endl;
 
-  std::cout << "sumByPointer" << std::endl;
-  sumByPointer(1, 1, &sum);
-  std::cout << sum << std::endl;
+  //? Passing by Reference
+  int sumByReferenceValue = 0;
+  sumByReference(10, 5, sumByReferenceValue);
+  std::cout << sumByReferenceValue << std::endl;
 
-  std::cout << "sumByReference" << std::endl;
-  sumByReference(3, 3, sum);
-  std::cout << sum << std::endl;
-
-  std::cout << "sumByStruct" << std::endl;
-  sumByStruct(params);
+  //? Passing Struct as Reference
+  Params params;
+  params.x = 10;
+  params.y = 5;
+  params.sum = 0;
+  sumByStructAsReference(params);
   std::cout << params.sum << std::endl;
 
   return 0;

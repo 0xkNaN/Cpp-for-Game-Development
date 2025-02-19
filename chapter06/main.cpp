@@ -1,10 +1,3 @@
-/**
- * @Author: Hassen Rmili
- * @Date:   2023-10-20 20:32:31
- * @Last Modified by:   Hassen Rmili
- * @Last Modified time: 2023-10-20 22:13:12
- */
-
 #include <iostream>
 
 int main()
@@ -14,10 +7,10 @@ int main()
   {
     std::cout << i << std::endl;
     if (i == 5)
-      goto last;
+      goto finish;
   }
 
-  last:
+  finish:
     std::cout << "LAST" << std::endl;
 
   return 0;

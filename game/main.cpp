@@ -1,25 +1,20 @@
 #include <iostream>
-#include <string.h>
 
-#include "GameLoop.h"
 #include "Player.h"
+#include "GameLoop.h"
 
-int main(int argc, char const *argv[])
+int main(int argc, char *argv[])
 {
-
   Player player;
-  bool isValidName = GameLoop::welcomePlayer(player);
-  if (!isValidName)
-  {
-    std::cout << "You name is not valid" << std::endl;
-    return 1;
-  }
+  GameLoop::welcomePlayer(player);
 
   //? Game Loop
-  while (GameLoop::doLoop())
+  bool isPlaying = true;
+  while (isPlaying)
   {
-    // std::cout << "Tick number: " << GameLoop::ticks << std::endl;
+    isPlaying = GameLoop::runGame();
   }
 
+  //...
   return 0;
 }

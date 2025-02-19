@@ -1,8 +1,8 @@
 #pragma once
 
-#include <string>
+#include <iostream>
 
 struct Player
 {
-  std::string m_name;
+  std::string name;
 };

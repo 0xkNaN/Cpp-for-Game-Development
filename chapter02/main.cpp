@@ -1,34 +1,38 @@
-/**
- * @Author: Hassen Rmili
- * @Date:   2023-10-15 03:11:21
- * @Last Modified by:   Hassen Rmili
- * @Last Modified time: 2023-10-16 16:43:52
- */
-
 #include <iostream>
 #include <string>
-#include <cstdlib>
-#include <ctime>
 
-int main()
+using std::cout;
+
+enum Color
 {
-  srand(time(NULL));
-  unsigned int guess = rand() % 100;
-  unsigned int number;
+  Red,   //? 0
+  Green, //? 1
+  Blue   //? 2
+};
 
-  while (guess != number)
-  {
-    std::cout << "Guess the number between 0 and 99 :: " << std::endl;
-    std::cin >> number;
+enum class EColor
+{
+  Red,
+  Green,
+  Blue
+};
 
-    if (guess < number)
-      std::cout << "Less" << std::endl;
+int main(int argc, char *argv[])
+{
+  char c = 65;  //? A
+  int x = 4.0;  //? 4
+  long y = 4.0; //? 4
 
-    if (guess > number)
-      std::cout << "Larger" << std::endl;
-  }
+  float xf = 1.0f;
+  double xd = 1.0;
 
-  std::cout << "Well done!" << std::endl;
+  bool t = true; //? (int)t = 1
+
+  EColor color = EColor::Blue;
+
+  cout << (int)((int)color == 2) << std::endl;
+  cout << (int)(EColor::Blue == color) << std::endl;
+  cout << (int)((int)EColor::Red == 0) << std::endl;
 
   return 0;
 }

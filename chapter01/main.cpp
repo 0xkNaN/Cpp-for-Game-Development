@@ -1,18 +1,13 @@
 #include <iostream>
 #include <string>
 
-int main()
+int main(int argc, char *argv[])
 {
-  std::string name{};
-  std::cout << "What is your name?" << std::endl;
-  std::cin >> name;
+  std::string str;
 
-  char *age; //! Verify this later
-  std::cout << "What is your number?" << std::endl;
-  std::cin >> age;
-
-  std::cout << "You said your name is " << name << std::endl;
-  std::cout << "and your number is " << age << std::endl;
+  std::cout << "Type something :: ";
+  std::cin >> str;
+  std::cout << "You typed :: " << str << std::endl;
 
   return 0;
 }

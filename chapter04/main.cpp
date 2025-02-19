@@ -1,36 +1,71 @@
-/**
- * @Author: Hassen Rmili
- * @Date:   2023-10-17 15:57:15
- * @Last Modified by:   Hassen Rmili
- * @Last Modified time: 2023-10-20 20:30:41
- */
-
 #include <iostream>
 #include <cstring>
 
-int main()
+int main(int argc, char *argv[])
 {
-  int x = 10;
+  //? C++ Arrays
+
+  int arr[3] = {0, 1, 2};
+
+  // std::cout << arr << std::endl;     //? mem adr
+  // std::cout << &arr << std::endl;    //? same as arr
+  // std::cout << &arr[0] << std::endl; //? same as arr
+
+  // std::cout << arr + 1 << std::endl; //? get next mem adr
+  // std::cout << &arr[1] << std::endl; //? same as arr + 1
+
+  //? References
+  int a = 10;
+  int &b = a;
+
+  // std::cout << a << std::endl;
+  // std::cout << b << std::endl;
+
+  a = 20;
+  // std::cout << a << std::endl;
+  // std::cout << b << std::endl;
+
+  b = 30;
+  // std::cout << a << std::endl;
+  // std::cout << b << std::endl;
+
+  //? Pointers
+  int x = 5;
   int *pX = &x;
 
-  char arr[6] = {'S', 'T', 'R', 'I', 'N', 'G'};
-  std::cout << arr << std::endl;
-  std::cout << *arr << std::endl;
-  std::cout << &arr << std::endl;
+  // std::cout << pX << std::endl;
+  // std::cout << *pX << std::endl;
+  // std::cout << *pX + 1 << std::endl;
 
-  // const char(*str)[7] = &("STRING");
-  const char *str1 = "A";
-  const char *str2 = "B";
-  char str[5] = {};
+  //? Void Pointer
+  void *vptr = &x;
 
-  std::cout << strlen(str1) << std::endl;
-  std::cout << strcmp(str1, str2) << std::endl; //? ascii(str1) - ascii(str2)
-  std::cout << strcpy(str, str1) << std::endl;  //? should contains enough space
-  std::cout << strcat(str, str2) << std::endl;
-  std::cout << strcat(str, (const char*)"C") << std::endl;
-  
-  std::cout << str << std::endl;
-  std::cout << strlen(str) << std::endl;
-  
+  std::cout << *(pX) << std::endl;
+  std::cout << *((int *)vptr) << std::endl;
+
+  //? Pointers and Arrays
+  int arri[3] = {0, 1, 2};
+
+  // std::cout << *arri << std::endl;       //? same as arri[0]
+  // std::cout << *(arri + 1) << std::endl; //? same as arri[1]
+  // std::cout << *(arri + 2) << std::endl; //? same as arri[2]
+  // std::cout << *(arri + 3) << std::endl; //? out of range
+
+  //? C style string
+  const char *cstr = "abc"; //? string literal
+  char str[4];
+
+  // std::cout << cstr << std::endl;
+
+  //? C style string functions
+  // std::cout << strlen(cstr) << std::endl;
+  // std::cout << strcmp(cstr, "abc") << std::endl;
+
+  // strcpy(str, cstr);
+  // std::cout << str << std::endl;
+
+  // strcat(str, "d");
+  // std::cout << str << std::endl;
+
   return 0;
 }

@@ -1,19 +1,12 @@
 #include <iostream>
 
-#include "Player.h"
-#include "GameLoop.h"
+#include "Game.h"
 
 int main(int argc, char *argv[])
 {
-  Player player;
-  GameLoop::welcomePlayer(player);
 
-  //? Game Loop
-  bool isPlaying = true;
-  while (isPlaying)
-  {
-    isPlaying = GameLoop::runGame();
-  }
+  Game *game = new Game();
+  game->runGame();
 
   //...
   return 0;
